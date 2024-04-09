@@ -20,3 +20,18 @@ function getComputerChoice() {
   }
 }
 
+// This function plays a round and returns the result
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    return "It's a tie!";
+  }
+  else if ( (playerSelection === "rock" && computerSelection === "paper") ||
+            (playerSelection === "paper" && computerSelection === "scissors") ||
+            (playerSelection === "scissors" && computerSelection === "rock") ) {
+    return "You lose!";
+  }
+  else {
+    return "You win!";
+  }
+
+}
