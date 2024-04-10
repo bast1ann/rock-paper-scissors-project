@@ -22,6 +22,7 @@ function getComputerChoice() {
 
 // This function plays a round and returns the result
 function playRound(playerSelection, computerSelection) {
+  playerSelection = playerSelection.toLowerCase();
   if (playerSelection === computerSelection) {
     return "It's a tie!";
   }
