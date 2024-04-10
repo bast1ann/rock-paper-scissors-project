@@ -20,6 +20,12 @@ function getComputerChoice() {
   }
 }
 
+// This function returns the player's choice
+function getPlayerChoice() {
+  let choice = prompt("Choose rock, paper or scissors: ");
+  return choice;
+}
+
 // This function plays a round and returns the result
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
@@ -36,9 +42,47 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// getPlayerChoice
-
-function getPlayerChoice() {
-  let choice = prompt("Choose rock, paper or scissors: ");
-  return choice;
+// Function that plays 5 rounds, keeps a score and returns the final winner
+// Pseudocode:
+// 1. take player's choice
+// 2. take computer's choice
+// 3. compare both choices
+// 4. count the win for the player or the computer 
+// 5. show results of the round: player's choice, computer's choice, winner and current score
+// 6. repeat steps 1-5 five times
+// 7. show the final score and winner
+function playGame() {
+  let playerChoice;
+  let computerChoice;
+  let playerCount = 0;
+  let computerCount = 0;
+  let result;
+  for (let i = 0; i < 5; i++) {
+    playerChoice = getPlayerChoice();
+    computerChoice = getComputerChoice();
+    result = playRound(playerChoice, computerChoice);
+    console.log(`You choose ${playerChoice} and computer chooses ${computerChoice}`);
+    if (result === "You win!") {
+      playerCount++;
+    }
+    else if (result === "You lose!") {
+      computerCount++;
+    }
+    console.log(result);
+    console.log(`${playerCount} Player - Computer ${computerCount}`);
+  }
+  if (playerCount > computerCount) {
+    console.log("You win the game!")
+  }
+  else if (computerCount > playerCount) {
+    console.log("You lose the game!")
+  }
+  else {
+    console.log("You tie the game!")
+  }
 }
+
+playGame();
+
+
+
