@@ -34,5 +34,11 @@ function playRound(playerSelection, computerSelection) {
   else {
     return "You win!";
   }
+}
 
+// getPlayerChoice
+
+function getPlayerChoice() {
+  let choice = prompt("Choose rock, paper or scissors: ");
+  return choice;
 }
