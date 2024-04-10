@@ -43,14 +43,6 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // Function that plays 5 rounds, keeps a score and returns the final winner
-// Pseudocode:
-// 1. take player's choice
-// 2. take computer's choice
-// 3. compare both choices
-// 4. count the win for the player or the computer 
-// 5. show results of the round: player's choice, computer's choice, winner and current score
-// 6. repeat steps 1-5 five times
-// 7. show the final score and winner
 function playGame() {
   let playerChoice;
   let computerChoice;
