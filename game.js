@@ -30,51 +30,18 @@ function getPlayerChoice() {
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
   if (playerSelection === computerSelection) {
-    return "It's a tie!";
+    return "tie";
   }
   else if ( (playerSelection === "rock" && computerSelection === "paper") ||
             (playerSelection === "paper" && computerSelection === "scissors") ||
             (playerSelection === "scissors" && computerSelection === "rock") ) {
-    return "You lose!";
+    return "lose";
   }
   else {
-    return "You win!";
+    return "win";
   }
 }
 
-// Function that plays 5 rounds, keeps a score and returns the final winner
-function playGame() {
-  let playerChoice;
-  let computerChoice;
-  let playerCount = 0;
-  let computerCount = 0;
-  let result;
-  for (let i = 0; i < 5; i++) {
-    playerChoice = getPlayerChoice();
-    computerChoice = getComputerChoice();
-    result = playRound(playerChoice, computerChoice);
-    console.log(`You choose ${playerChoice} and computer chooses ${computerChoice}`);
-    if (result === "You win!") {
-      playerCount++;
-    }
-    else if (result === "You lose!") {
-      computerCount++;
-    }
-    console.log(result);
-    console.log(`${playerCount} Player - Computer ${computerCount}`);
-  }
-  if (playerCount > computerCount) {
-    console.log("You win the game!")
-  }
-  else if (computerCount > playerCount) {
-    console.log("You lose the game!")
-  }
-  else {
-    console.log("You tie the game!")
-  }
-}
-
-playGame();
 
 
 
