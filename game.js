@@ -1,10 +1,22 @@
+let counterPlayer = 0;
+let counterComputer = 0;
+let counterRound = 0;
+
 const buttonRock = document.querySelector(".buttons .rock");
 const buttonPaper = document.querySelector(".buttons .paper");
 const buttonScissors = document.querySelector(".buttons .scissors");
+const playerScoreBoard = document.querySelector(".scoreboard .player");
+const computerScoreBoard = document.querySelector(".scoreboard .computer");
+const roundNumberBoard = document.querySelector(".scoreboard .round");
+const messageBoard = document.querySelector(".messageBoard");
+const playerScore = document.querySelector(".scoreboard .player span");
+const computerScore = document.querySelector(".scoreboard .computer span");
+const roundNumber = document.querySelector(".scoreboard .round span");
+const message = document.querySelector(".messageBoard span");
 
-buttonRock.addEventListener("click", () => console.log(playRound("rock", getComputerChoice()) ) );
-buttonPaper.addEventListener("click", () => console.log(playRound("paper", getComputerChoice()) ) );
-buttonScissors.addEventListener("click", () => console.log(playRound("scissors", getComputerChoice()) ) );
+buttonRock.addEventListener( "click", () => playRound("rock", getComputerChoice()) );
+buttonPaper.addEventListener( "click", () => playRound("paper", getComputerChoice()) );
+buttonScissors.addEventListener( "click", () => playRound("scissors", getComputerChoice()) );
 
 // This function generates a random integer between two values
 // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -34,20 +46,45 @@ function getPlayerChoice() {
   return choice;
 }
 
-// This function plays a round and returns the result
+// This function plays a round
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
+  counterRound++;
+  roundNumber.textContent = counterRound;
   if (playerSelection === computerSelection) {
-    return "tie";
+    message.textContent = "You tie this round!"
   }
   else if ( (playerSelection === "rock" && computerSelection === "paper") ||
             (playerSelection === "paper" && computerSelection === "scissors") ||
             (playerSelection === "scissors" && computerSelection === "rock") ) {
-    return "lose";
+    counterComputer++;
+    computerScore.textContent = counterComputer;
+    message.textContent = "You lose this round!";
   }
   else {
-    return "win";
+    counterPlayer++;
+    playerScore.textContent = counterPlayer;
+    message.textContent = "You win this round!";
   }
+
+  if (counterComputer === 5 || counterPlayer === 5) {
+    resetGame();
+  }
+
+  playerScoreBoard.appendChild(playerScore);
+  computerScoreBoard.appendChild(computerScore);
+  roundNumberBoard.appendChild(roundNumber);
+  messageBoard.appendChild(message);
+}
+
+function resetGame() {
+  counterPlayer = 0;
+  counterComputer = 0;
+  counterRound = 0;
+  playerScore.textContent = counterPlayer;
+  computerScore.textContent = counterComputer;
+  roundNumber.textContent = counterRound;
+  message.textContent = "";
 }
 
 
