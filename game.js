@@ -1,3 +1,11 @@
+const buttonRock = document.querySelector(".buttons .rock");
+const buttonPaper = document.querySelector(".buttons .paper");
+const buttonScissors = document.querySelector(".buttons .scissors");
+
+buttonRock.addEventListener("click", () => console.log(playRound("rock", getComputerChoice()) ) );
+buttonPaper.addEventListener("click", () => console.log(playRound("paper", getComputerChoice()) ) );
+buttonScissors.addEventListener("click", () => console.log(playRound("scissors", getComputerChoice()) ) );
+
 // This function generates a random integer between two values
 // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getRandomInt(min, max) {
@@ -41,7 +49,5 @@ function playRound(playerSelection, computerSelection) {
     return "win";
   }
 }
-
-
 
 
