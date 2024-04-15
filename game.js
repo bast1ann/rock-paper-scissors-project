@@ -40,12 +40,6 @@ function getComputerChoice() {
   }
 }
 
-// This function returns the player's choice
-function getPlayerChoice() {
-  let choice = prompt("Choose rock, paper or scissors: ");
-  return choice;
-}
-
 // This function plays a round
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
