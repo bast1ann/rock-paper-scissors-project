@@ -14,9 +14,9 @@ const computerScore = document.querySelector(".scoreboard .computer span");
 const roundNumber = document.querySelector(".scoreboard .round span");
 const message = document.querySelector(".messageBoard span");
 
-buttonRock.addEventListener( "click", () => playRound("rock", getComputerChoice()) );
-buttonPaper.addEventListener( "click", () => playRound("paper", getComputerChoice()) );
-buttonScissors.addEventListener( "click", () => playRound("scissors", getComputerChoice()) );
+buttonRock.addEventListener( "click", () => playRound("ROCK", getComputerChoice()) );
+buttonPaper.addEventListener( "click", () => playRound("PAPER", getComputerChoice()) );
+buttonScissors.addEventListener( "click", () => playRound("SCISSORS", getComputerChoice()) );
 
 // This function generates a random integer between two values
 // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -32,33 +32,32 @@ function getComputerChoice() {
   
   switch (choiceNumber) {
     case 1:
-      return "rock";
+      return "ROCK";
     case 2: 
-      return "paper";
+      return "PAPER";
     case 3:
-      return "scissors";
+      return "SCISSORS";
   }
 }
 
 // This function plays a round
 function playRound(playerSelection, computerSelection) {
-  playerSelection = playerSelection.toLowerCase();
   counterRound++;
   roundNumber.textContent = counterRound;
   if (playerSelection === computerSelection) {
-    message.textContent = "You tie this round!"
+    message.textContent = `Both chose ${playerSelection} so you tie this round!`
   }
-  else if ( (playerSelection === "rock" && computerSelection === "paper") ||
-            (playerSelection === "paper" && computerSelection === "scissors") ||
-            (playerSelection === "scissors" && computerSelection === "rock") ) {
+  else if ( (playerSelection === "ROCK" && computerSelection === "PAPER") ||
+            (playerSelection === "PAPER" && computerSelection === "SCISSORS") ||
+            (playerSelection === "SCISSORS" && computerSelection === "ROCK") ) {
     counterComputer++;
     computerScore.textContent = counterComputer;
-    message.textContent = "You lose this round!";
+    message.textContent = `${computerSelection} beats ${playerSelection} so you lose this round!`;
   }
   else {
     counterPlayer++;
     playerScore.textContent = counterPlayer;
-    message.textContent = "You win this round!";
+    message.textContent = `${playerSelection} beats ${computerSelection} so you win this round!`;
   }
 
   if (counterComputer === 5 || counterPlayer === 5) {
