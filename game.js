@@ -5,6 +5,7 @@ let counterRound = 0;
 const buttonRock = document.querySelector(".buttons .rock");
 const buttonPaper = document.querySelector(".buttons .paper");
 const buttonScissors = document.querySelector(".buttons .scissors");
+const buttonReset = document.querySelector(".buttonReset");
 const playerScoreBoard = document.querySelector(".scoreboard .player");
 const computerScoreBoard = document.querySelector(".scoreboard .computer");
 const roundNumberBoard = document.querySelector(".scoreboard .round");
@@ -17,6 +18,7 @@ const message = document.querySelector(".messageBoard span");
 buttonRock.addEventListener( "click", () => playRound("ROCK", getComputerChoice()) );
 buttonPaper.addEventListener( "click", () => playRound("PAPER", getComputerChoice()) );
 buttonScissors.addEventListener( "click", () => playRound("SCISSORS", getComputerChoice()) );
+buttonReset.addEventListener("click", resetGame);
 
 // This function generates a random integer between two values
 // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -77,6 +79,7 @@ function resetGame() {
   playerScore.textContent = counterPlayer;
   computerScore.textContent = counterComputer;
   roundNumber.textContent = counterRound;
+  message.textContent = "Let's play again!";
 }
 
 
