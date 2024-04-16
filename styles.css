@@ -1,0 +1,75 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Courier New", monospace;
+}
+
+.container, .scoreboard, .buttons, .messageBoard {
+  display: flex;
+}
+
+.container {
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.header {
+  padding: 20px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.scoreboard {
+  gap: 200px;
+  padding: 20px;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.messageBoard {
+  height: 100px;
+  width: 800px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+}
+
+.buttons {
+  gap: 100px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.buttons button, .buttonReset {
+  padding: 20px;
+  font-size: 25px;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #1ecbe1;
+}
+
+.buttonReset {
+  margin: 0 auto;
+}
+
