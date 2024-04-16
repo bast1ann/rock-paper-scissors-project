@@ -62,13 +62,13 @@ function playRound(playerSelection, computerSelection) {
   }
 
   if (counterComputer === 5 || counterPlayer === 5) {
-    resetGame();
+    if (counterComputer === 5) { 
+      message.textContent = "You lose the game! Better luck next time.";
+    }
+    else {
+      message.textContent = "Congratulations! You win the game!";
+    }
   }
-
-  playerScoreBoard.appendChild(playerScore);
-  computerScoreBoard.appendChild(computerScore);
-  roundNumberBoard.appendChild(roundNumber);
-  messageBoard.appendChild(message);
 }
 
 function resetGame() {
@@ -78,7 +78,6 @@ function resetGame() {
   playerScore.textContent = counterPlayer;
   computerScore.textContent = counterComputer;
   roundNumber.textContent = counterRound;
-  message.textContent = "";
 }
 
 
