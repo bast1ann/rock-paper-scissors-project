@@ -19,6 +19,14 @@ buttonRock.addEventListener( "click", () => playRound("ROCK", getComputerChoice(
 buttonPaper.addEventListener( "click", () => playRound("PAPER", getComputerChoice()) );
 buttonScissors.addEventListener( "click", () => playRound("SCISSORS", getComputerChoice()) );
 buttonReset.addEventListener("click", resetGame);
+buttonRock.addEventListener("mouseenter", () => buttonRock.style.backgroundColor = "#E1341E");
+buttonPaper.addEventListener("mouseenter", () => buttonPaper.style.backgroundColor = "#E1341E");
+buttonScissors.addEventListener("mouseenter", () => buttonScissors.style.backgroundColor = "#E1341E");
+buttonReset.addEventListener("mouseenter", () => buttonReset.style.backgroundColor = "#E1341E");
+buttonRock.addEventListener("mouseleave", () => buttonRock.style.backgroundColor = "#1ECBE1");
+buttonPaper.addEventListener("mouseleave", () => buttonPaper.style.backgroundColor = "#1ECBE1");
+buttonScissors.addEventListener("mouseleave", () => buttonScissors.style.backgroundColor = "#1ECBE1");
+buttonReset.addEventListener("mouseleave", () => buttonReset.style.backgroundColor = "#1ECBE1");
 
 // This function generates a random integer between two values
 // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -81,5 +89,3 @@ function resetGame() {
   roundNumber.textContent = counterRound;
   message.textContent = "Let's play again!";
 }
-
-
