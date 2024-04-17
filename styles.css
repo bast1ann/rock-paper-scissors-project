@@ -43,13 +43,14 @@ html {
 
 .messageBoard {
   height: 100px;
-  width: 800px;
+  width: 1000px;
   border: 2px solid black;
   border-radius: 10px;
   font-size: 25px;
   align-items: center;
   justify-content: center;
   font-style: italic;
+  text-align: center;
 }
 
 .buttons {

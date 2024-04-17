@@ -6,10 +6,6 @@ const buttonRock = document.querySelector(".buttons .rock");
 const buttonPaper = document.querySelector(".buttons .paper");
 const buttonScissors = document.querySelector(".buttons .scissors");
 const buttonReset = document.querySelector(".buttonReset");
-const playerScoreBoard = document.querySelector(".scoreboard .player");
-const computerScoreBoard = document.querySelector(".scoreboard .computer");
-const roundNumberBoard = document.querySelector(".scoreboard .round");
-const messageBoard = document.querySelector(".messageBoard");
 const playerScore = document.querySelector(".scoreboard .player span");
 const computerScore = document.querySelector(".scoreboard .computer span");
 const roundNumber = document.querySelector(".scoreboard .round span");
@@ -19,14 +15,19 @@ buttonRock.addEventListener( "click", () => playRound("ROCK", getComputerChoice(
 buttonPaper.addEventListener( "click", () => playRound("PAPER", getComputerChoice()) );
 buttonScissors.addEventListener( "click", () => playRound("SCISSORS", getComputerChoice()) );
 buttonReset.addEventListener("click", resetGame);
-buttonRock.addEventListener("mouseenter", () => buttonRock.style.backgroundColor = "#E1341E");
-buttonPaper.addEventListener("mouseenter", () => buttonPaper.style.backgroundColor = "#E1341E");
-buttonScissors.addEventListener("mouseenter", () => buttonScissors.style.backgroundColor = "#E1341E");
-buttonReset.addEventListener("mouseenter", () => buttonReset.style.backgroundColor = "#E1341E");
+buttonRock.addEventListener("mouseenter", () => {buttonRock.style.backgroundColor = "#E1341E"
+                                                  buttonRock.style.cursor = "pointer";});
+buttonPaper.addEventListener("mouseenter", () => {buttonPaper.style.backgroundColor = "#E1341E";
+                                                  buttonPaper.style.cursor = "pointer";});
+buttonScissors.addEventListener("mouseenter", () => {buttonScissors.style.backgroundColor = "#E1341E"
+                                                      buttonScissors.style.cursor = "pointer";});
+buttonReset.addEventListener("mouseenter", () => {buttonReset.style.backgroundColor = "#E1341E";
+                                                  buttonReset.style.cursor = "pointer";});
 buttonRock.addEventListener("mouseleave", () => buttonRock.style.backgroundColor = "#1ECBE1");
 buttonPaper.addEventListener("mouseleave", () => buttonPaper.style.backgroundColor = "#1ECBE1");
 buttonScissors.addEventListener("mouseleave", () => buttonScissors.style.backgroundColor = "#1ECBE1");
 buttonReset.addEventListener("mouseleave", () => buttonReset.style.backgroundColor = "#1ECBE1");
+
 
 // This function generates a random integer between two values
 // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -72,10 +73,12 @@ function playRound(playerSelection, computerSelection) {
 
   if (counterComputer === 5 || counterPlayer === 5) {
     if (counterComputer === 5) { 
-      message.textContent = "You lose the game! Better luck next time.";
+      message.textContent = `${computerSelection} beats ${playerSelection} so you lose the game! 
+                              Better luck next time.`;
     }
     else {
-      message.textContent = "Congratulations! You win the game!";
+      message.textContent = `${playerSelection} beats ${computerSelection} so you win the game!
+                              Congratulations!`;
     }
   }
 }
