@@ -15,14 +15,10 @@ buttonRock.addEventListener( "click", () => playRound("ROCK", getComputerChoice(
 buttonPaper.addEventListener( "click", () => playRound("PAPER", getComputerChoice()) );
 buttonScissors.addEventListener( "click", () => playRound("SCISSORS", getComputerChoice()) );
 buttonReset.addEventListener("click", resetGame);
-buttonRock.addEventListener("mouseenter", () => {buttonRock.style.backgroundColor = "#E1341E"
-                                                  buttonRock.style.cursor = "pointer";});
-buttonPaper.addEventListener("mouseenter", () => {buttonPaper.style.backgroundColor = "#E1341E";
-                                                  buttonPaper.style.cursor = "pointer";});
-buttonScissors.addEventListener("mouseenter", () => {buttonScissors.style.backgroundColor = "#E1341E"
-                                                      buttonScissors.style.cursor = "pointer";});
-buttonReset.addEventListener("mouseenter", () => {buttonReset.style.backgroundColor = "#E1341E";
-                                                  buttonReset.style.cursor = "pointer";});
+buttonRock.addEventListener("mouseenter", () => buttonRock.style.backgroundColor = "#E1341E");
+buttonPaper.addEventListener("mouseenter", () => buttonPaper.style.backgroundColor = "#E1341E");
+buttonScissors.addEventListener("mouseenter", () => buttonScissors.style.backgroundColor = "#E1341E");
+buttonReset.addEventListener("mouseenter", () => buttonReset.style.backgroundColor = "#E1341E");
 buttonRock.addEventListener("mouseleave", () => buttonRock.style.backgroundColor = "#1ECBE1");
 buttonPaper.addEventListener("mouseleave", () => buttonPaper.style.backgroundColor = "#1ECBE1");
 buttonScissors.addEventListener("mouseleave", () => buttonScissors.style.backgroundColor = "#1ECBE1");

@@ -57,6 +57,7 @@ html {
   gap: 100px;
   padding: 20px;
   justify-content: center;
+  cursor: pointer;
 }
 
 .buttons button, .buttonReset {
